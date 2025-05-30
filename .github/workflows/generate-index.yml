@@ -5,6 +5,7 @@ on:
     paths:
       - 'docs/objects/**'
       - 'docs/index.template.html'
+  workflow_dispatch:
 
 jobs:
   generate-index:
