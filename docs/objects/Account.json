@@ -1,9 +1,7 @@
 {
-  "object": {
-    "apiName": "Account",
-    "description": "Represents an individual account, which is an organization or person involved with your business.",
-    "sourceUrl": "https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_account.htm"
-  },
+  "apiName": "Account",
+  "description": "Represents an individual account, which is an organization or person involved with your business.",
+  "sourceUrl": "https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_account.htm",
   "fields": [
     {
       "apiName": "Id",
