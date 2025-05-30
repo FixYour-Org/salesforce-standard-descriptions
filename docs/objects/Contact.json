@@ -1,0 +1,33 @@
+{
+  "object": {
+    "apiName": "Contact",
+    "description": "Represents a contact, which is an individual associated with an account.",
+    "sourceUrl": "https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm"
+  },
+  "fields": [
+    {
+      "apiName": "Id",
+      "description": "Unique identifier for the contact."
+    },
+    {
+      "apiName": "FirstName",
+      "description": "First name of the contact."
+    },
+    {
+      "apiName": "LastName",
+      "description": "Last name of the contact."
+    },
+    {
+      "apiName": "Email",
+      "description": "Email address of the contact."
+    },
+    {
+      "apiName": "AccountId",
+      "description": "ID of the account that is associated with this contact."
+    },
+    {
+      "apiName": "CreatedDate",
+      "description": "Date and time when the contact was created."
+    }
+  ]
+}

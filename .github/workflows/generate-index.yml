@@ -1,0 +1,37 @@
+name: Generate index.html
+
+on:
+  push:
+    paths:
+      - 'docs/objects/**'
+      - 'docs/index.template.html'
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate object list HTML
+        run: |
+          OBJECT_FILES=$(ls docs/objects/*.json)
+          OBJECT_LIST=""
+          for file in $OBJECT_FILES; do
+            BASENAME=$(basename "$file" .json)
+            OBJECT_LIST="$OBJECT_LIST<li><a href=\"objects/$BASENAME.json\" target=\"_blank\">$BASENAME</a></li>"
+          done
+          # Insert object list into the template
+          sed "s|<!-- Auto-generated object links will go here -->|$OBJECT_LIST|" docs/index.template.html > docs/index.html
+
+      - name: Commit and push changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ `git status --porcelain` ]]; then
+            git add docs/index.html
+            git commit -m "Auto-update index.html with current objects"
+            git push
+          else
+            echo "No changes to commit."
+          fi

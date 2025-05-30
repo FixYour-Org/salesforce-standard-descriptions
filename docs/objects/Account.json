@@ -1,0 +1,33 @@
+{
+  "object": {
+    "apiName": "Account",
+    "description": "Represents an individual account, which is an organization or person involved with your business.",
+    "sourceUrl": "https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_account.htm"
+  },
+  "fields": [
+    {
+      "apiName": "Id",
+      "description": "Unique identifier for the object."
+    },
+    {
+      "apiName": "Name",
+      "description": "Name of the account."
+    },
+    {
+      "apiName": "AccountNumber",
+      "description": "Unique identifier assigned to the account by your organization."
+    },
+    {
+      "apiName": "AnnualRevenue",
+      "description": "Estimated annual revenue of the account."
+    },
+    {
+      "apiName": "Industry",
+      "description": "Industry in which the account operates."
+    },
+    {
+      "apiName": "CreatedDate",
+      "description": "Date and time when the record was created."
+    }
+  ]
+}
