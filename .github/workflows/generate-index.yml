@@ -25,13 +25,16 @@ jobs:
           sed "s|<!-- Auto-generated object links will go here -->|$OBJECT_LIST|" docs/index.template.html > docs/index.html
 
       - name: Commit and push changes if any
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           if [[ `git status --porcelain` ]]; then
             git add docs/index.html
             git commit -m "Auto-update index.html with current objects"
-            git push
+            git push origin HEAD:${{ github.ref }}
           else
             echo "No changes to commit."
           fi
